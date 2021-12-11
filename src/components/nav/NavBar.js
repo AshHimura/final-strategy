@@ -4,11 +4,11 @@ import "./NavBar.css"
 
 //Link component generates Anchor tags for
 //the "To" attribute is the htag attribute for Link anchor tag, both combine to create link in the DOM
-export const NavBar = () => {
+export const NavBar = (props) => {
     return (
         <ul className="navbar">
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/chraracters">Main Characters</Link>
+                <Link className="navbar__link" to="/characters">Main Characters</Link>
             </li>
 
             <li className="navbar__item active">
