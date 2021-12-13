@@ -26,14 +26,17 @@ export const SplashPage = () => {
                             localStorage.removeItem("strategy_user")
                         }
                     }>Logout!</Link>
-
                 </li>
+
                 <h1>Final Strategy</h1>
-                {games.map((gameObj) => {
-                    return <Link to={`/game/${gameObj.id}`}>
-                        <img key={gameObj.id} src={`http://localhost:8080/${gameObj.img}`} alt={gameObj.alt} />
-                    </Link>
-                })}
+                <div>
+                    {
+                    games.map((gameObj) => {
+                        return <Link to={`/game/${parseInt(gameObj.id)}`} id="link"> 
+                            <img key={gameObj.id} src={`http://localhost:8080/${gameObj.img}`} alt={gameObj.alt} />
+                        </Link>
+                    })}
+                    </div>
 
             </div>
         </>

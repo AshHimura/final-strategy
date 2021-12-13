@@ -3,11 +3,11 @@ import { Route, Redirect } from "react-router-dom";
 import { NavBar } from "./nav/NavBar";
 import { Login } from "./auth/Login";
 import { Register } from "./auth/Register";
-import { SplashPage } from "./landing/SplashPage";
 import "./Strategy.css";
+import { ApplicationViews } from "./ApplicationViews";
 
 
-export const Strategy = () => 
+export const Strategy = () =>
 
     <>
         <Route
@@ -15,9 +15,9 @@ export const Strategy = () =>
                 if (localStorage.getItem("strategy_user")) {
                     return (
                         <>
-                    <SplashPage />
+                            <ApplicationViews />
                         </>
-                    );
+                    )
                 } else {
                     return <Redirect to="/login" />;
                 }

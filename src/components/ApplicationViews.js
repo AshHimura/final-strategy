@@ -3,18 +3,39 @@
 
 import React from "react"
 import { Route } from "react-router-dom"
-import { SplashPage } from "./landing/SplashPage"
+import { Games } from "./games/Game"
+import { NavBar } from "./nav/NavBar"
+import { SplashView } from "./SplashView"
+import { Characters } from "./characters/Characters"
+import { CharacterInfo } from "./characters/Characterinfo"
+import { ItemInfo } from "./items/ItemInfo"
+
+
 
 
 export const ApplicationViews = () => {
     return (
         <>
-            <Route exact path="/welcome">
-                <SplashPage/>
+
+
+            <SplashView/>
+
+            <NavBar/>
+
+            
+            <Route exact path="/characters">
+                <Characters />
             </Route>
-            <Route exact path="/game/:gameId(\d+)">
+
+    
+            <Route exact path="/items">
+                <ItemInfo />
+            </Route>
+
+            <Route path="/game/:gameId(\d+)">
                 <Games />
             </Route>
+
 
         </>
     )
