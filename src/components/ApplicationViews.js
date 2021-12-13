@@ -8,6 +8,7 @@ import { NavBar } from "./nav/NavBar"
 import { SplashView } from "./SplashView"
 import { Characters } from "./characters/Characters"
 import { CharacterInfo } from "./characters/Characterinfo"
+import { ItemInfo } from "./items/ItemInfo"
 
 
 
@@ -21,12 +22,14 @@ export const ApplicationViews = () => {
 
             <NavBar/>
 
+            
             <Route exact path="/characters">
                 <Characters />
             </Route>
 
-            <Route path="/characters/:characterId(\d+)">
-                <CharacterInfo />
+    
+            <Route exact path="/items">
+                <ItemInfo />
             </Route>
 
             <Route path="/game/:gameId(\d+)">

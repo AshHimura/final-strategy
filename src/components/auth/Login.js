@@ -23,7 +23,7 @@ export const Login = () => {
         e.preventDefault()
         existingUserCheck()
             .then(exists => {
-                if (exists) {
+                if (exists && exists?.password) {
                     localStorage.setItem("strategy_user", exists.id)
                     history.push("/welcome")
                 } else {
