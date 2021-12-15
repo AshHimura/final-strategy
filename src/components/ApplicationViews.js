@@ -48,7 +48,7 @@ export const ApplicationViews = () => {
                     <NoteForm />
                 </Route>
 
-                <Route exact path="/game/:gameId(\d+)/notes/:noteId(\d+)" component={Note}>
+                <Route path="/game/:gameId(\d+)/notes/:noteId(\d+)" component={Note}>
                     <Note />
                 </Route>
             </Switch>
