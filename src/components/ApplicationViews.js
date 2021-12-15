@@ -7,8 +7,12 @@ import { Games } from "./games/Game"
 import { NavBar } from "./nav/NavBar"
 import { SplashView } from "./SplashView"
 import { Characters } from "./characters/Characters"
-import { CharacterInfo } from "./characters/Characterinfo"
-import { ItemInfo } from "./items/ItemInfo"
+import { Items } from "./items/Items"
+import { NoteList } from "./notes/NoteList"
+import { Note } from "./notes/Notes"
+import { NoteForm } from "./notes/NoteForm"
+
+
 
 
 
@@ -23,19 +27,30 @@ export const ApplicationViews = () => {
             <NavBar/>
 
             
-            <Route exact path="/characters">
+            <Route exact path="/game/:gameId(\d+)/characters" component={Characters}>
                 <Characters />
             </Route>
 
     
-            <Route exact path="/items">
-                <ItemInfo />
+            <Route exact path="/game/:gameId(\d+)/items" component={Items}>
+                <Items />
             </Route>
 
-            <Route path="/game/:gameId(\d+)">
+            <Route exact path="/game/:gameId(\d+)">
                 <Games />
             </Route>
 
+            <Route exact path="/game/:gameId(\d+)/notes" component={NoteList}>
+                <NoteList />
+            </Route>
+            
+            <Route path="/game/:gameId(\d+)/notes/create" component={NoteForm}>
+                <NoteForm />
+            </Route>
+
+            <Route exact path="/game/:gameId(\d+)/notes/:noteId(\d+)" component={Note}>
+                <Note/>
+            </Route>
 
         </>
     )

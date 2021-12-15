@@ -48,6 +48,7 @@ export const Equipment = () => {
             </select>
             
             <div>
+                {equipItemDataPost()}
                 </div>
         </>
     )

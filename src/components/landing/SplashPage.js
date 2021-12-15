@@ -15,7 +15,6 @@ export const SplashPage = () => {
                 })
         }, [])
 
-
     return (
         <>
             <div className="container">
@@ -29,13 +28,14 @@ export const SplashPage = () => {
                 </li>
 
                 <h1>Final Strategy</h1>
-                <div>
+                <div> 
                     {
                     games.map((gameObj) => {
-                        return <Link to={`/game/${parseInt(gameObj.id)}`} id="link"> 
+                        return <Link to={`/game/${parseInt(gameObj.id)}`} id={gameObj.id}> 
                             <img key={gameObj.id} src={`http://localhost:8080/${gameObj.img}`} alt={gameObj.alt} />
                         </Link>
                     })}
+                    
                     </div>
 
             </div>

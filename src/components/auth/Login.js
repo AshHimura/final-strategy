@@ -5,12 +5,11 @@ import "./Login.css"
 
 export const Login = () => {
     const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
     const existDialog = useRef()
     const history = useHistory()
 
     const validateForm = () => {
-        return email.length > 0 && password.length > 0
+        return email.length > 0 
     }
 
     const existingUserCheck = () => {
@@ -23,7 +22,7 @@ export const Login = () => {
         e.preventDefault()
         existingUserCheck()
             .then(exists => {
-                if (exists && exists?.password) {
+                if (exists) {
                     localStorage.setItem("strategy_user", exists.id)
                     history.push("/welcome")
                 } else {
@@ -51,14 +50,7 @@ export const Login = () => {
                             placeholder="Email address"
                             required autoFocus />
                     </fieldset>
-                    <fieldset>
-                        <label htmlFor="inputPassword"> Password </label>
-                        <input type="password"
-                            onChange={evt => setPassword(evt.target.value)}
-                            className="form-control"
-                            placeholder="Password"
-                            required autoFocus />
-                    </fieldset>
+            
                     <fieldset>
                         <button type="submit" disabled={!validateForm()}>
                             Sign in
