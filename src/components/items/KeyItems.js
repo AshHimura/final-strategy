@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import { useParams } from "react-router-dom"
-import { ItemInfo } from "./ItemInfo"
 
-export const KeyItems = () => {
+export const KeyItems = ({
+    keyI,
+    setKeyI,
+    setSelectKeyI,
+    setSelectEquipI,
+    setSelectBattleI
+}) => {
 
-    const [keyI, setKeyI] = useState([])
-    const [selectKeyI, setSelecKeyI] = useState({})
     const { gameId } = useParams()
 
     useEffect(
@@ -19,39 +22,30 @@ export const KeyItems = () => {
         []
     )
 
-    const handleKeyItemSelect = (evt) => {
-        const test = keyI.find( info  => {
-            return (info.id === parseInt(evt.target.value))
-        
-    })
-    setSelecKeyI(test)
+    const clearEquipBattle = () => {
+        setSelectEquipI({})
+        setSelectBattleI({})
     }
 
-    const keyItemDataPost = () => {
-        return (
-            <>  
-                
-            <h3>Key Item</h3>
-                <div>Name: {selectKeyI.name}</div>         
-                <div>Game: {selectKeyI.game}</div>         
-                <div>Description: {selectKeyI.description}</div>                  
-                {/* {selectKeyI?.id ? <ItemInfo selectKeyI={selectKeyI}/> : <h2>Choose an item, kupo!</h2>} */}
-            </>
-        )
-        }
+    const handleKeyItemSelect = (evt) => {
+        const test = keyI.find(info => {
+            return (info.id === parseInt(evt.target.value))
+
+        })
+        clearEquipBattle()
+        setSelectKeyI(test)
+    }
+
 
     return (
         <>
-            
-            <select defaultValue="" name="keyItem" id={keyI.id} className="form-control" placeholder="Select a Key Item"
+
+            <select value={keyI} name="keyItem" id={keyI.id} className="form-control" placeholder="Select a Key Item"
                 onChange={handleKeyItemSelect}>
                 <option value="">Choose a key item!</option>
                 {keyI.map(ki => { return <option key={ki.id} value={ki.id}>{ki.name}</option> })}
             </select>
-            
-            <div>
-            {keyItemDataPost}
-                </div>
+
         </>
     )
 }

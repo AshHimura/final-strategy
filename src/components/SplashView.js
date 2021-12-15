@@ -6,7 +6,7 @@ export const SplashView = () => {
     return (
         <>
 
-            <Route exact path="/welcome">
+            <Route exact path="/">
                 <SplashPage />
             </Route>
 

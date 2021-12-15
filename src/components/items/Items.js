@@ -1,89 +1,15 @@
-import React, { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import React, { useState } from "react"
+import { BattleItems } from "./BattleItems"
+import { KeyItems } from "./KeyItems"
+import { Equipment } from "./Equipment"
 
-export const Items = () => {
+export const Items = (props) => {
     const [keyI, setKeyI] = useState([])
     const [equipI, setEquipI] = useState([])
     const [battleI, setBattleI] = useState([])
     const [selectKeyI, setSelectKeyI] = useState({})
     const [selectEquipI, setSelectEquipI] = useState({})
     const [selectBattleI, setSelectBattleI] = useState({})
-    const { gameId } = useParams()
-
-    useEffect(
-        () => {
-            fetch(`http://localhost:8088/keyItems`)
-                .then(res => res.json())
-                .then((data) => {
-                    setKeyI(data)
-                })
-        },
-        []
-    )
-
-    useEffect(
-        () => {
-            fetch(`http://localhost:8088/equipment`)
-                .then(res => res.json())
-                .then((data) => {
-                    setEquipI(data)
-                })
-        },
-        []
-    )
-
-    useEffect(
-        () => {
-            fetch(`http://localhost:8088/battleItems`)
-                .then(res => res.json())
-                .then((data) => {
-                    setBattleI(data)
-                })
-        },
-        []
-    )
-
-    const clearEquipBattle = () => {
-        setSelectEquipI({})
-        setSelectBattleI({})
-    }
-    
-    const clearKeyBattle = () => {
-        setSelectKeyI({})
-        setSelectBattleI({})
-    }
-    
-    const clearKeyEquip = () => {
-        setSelectKeyI({})
-        setSelectEquipI({})
-    }
-
-    const handleKeyItemSelect = (evt) => {
-        const test = keyI.find(info => {
-            return (info.id === parseInt(evt.target.value))
-
-        })
-        clearEquipBattle()
-        setSelectKeyI(test)
-    }
-
-    const handleEquipItemSelect = (evt) => {
-        const test = equipI.find(info => {
-            return (info.id === parseInt(evt.target.value))
-
-        })
-        clearKeyBattle()
-        setSelectEquipI(test)
-    }
-
-    const handleBattleItemSelect = (evt) => {
-        const test = battleI.find(info => {
-            return (info.id === parseInt(evt.target.value))
-
-        })
-        clearKeyEquip()
-        setSelectBattleI(test)
-    }
 
     const keyItemDataPost = () => {
         return (
@@ -97,10 +23,8 @@ export const Items = () => {
                     </>
                     : ""}
             </>
-        ) 
-        
+        )
     }
-
 
     const equipItemDataPost = () => {
         return (
@@ -125,7 +49,8 @@ export const Items = () => {
                         <h3>Items in Battle</h3>
                         <div>Name: {selectBattleI.name}</div>
                         <div>Effect: {selectBattleI.effect}</div>
-                    </> : ""}
+                    </>
+                    : ""}
             </>
         )
     }
@@ -135,32 +60,19 @@ export const Items = () => {
 
             <h2>Choose an item, kupo!</h2>
 
-            <select name="keyItem" value={keyI} id={keyI.id} className="form-control" placeholder="Select a Key Item"
-                onChange={handleKeyItemSelect}>
-                <option value="">Choose a key item!</option>
-                {keyI.map(ki => { return <option key={ki.id} value={ki.id}>{ki.name}</option> })}
-            </select>
+            <div className="item">
+                <KeyItems keyI={keyI} setKeyI={setKeyI} setSelectKeyI={setSelectKeyI} setSelectEquipI={setSelectEquipI} setSelectBattleI={setSelectBattleI} />
 
+                <BattleItems battleI={battleI} setBattleI={setBattleI} setSelectKeyI={setSelectKeyI} setSelectEquipI={setSelectEquipI} setSelectBattleI={setSelectBattleI} />
 
-            <select name="equipItem" value={equipI} id={equipI.id} className="form-control" placeholder="Select equipment!"
-                onChange={handleEquipItemSelect}>
-                <option value="">Choose some equipment!</option>
-                {equipI.map(eq => { return <option key={eq.id} value={eq.id}>{eq.name}</option> })}
-            </select>
-
-
-            <select name="battleItem" value={battleI} id={battleI.id} className="form-control" placeholder="Select a Battle Item"
-                onChange={handleBattleItemSelect}>
-                <option value="">Choose a battle item!</option>
-                {battleI.map(ba => { return <option bkey={ba.id} value={ba.id}>{ba.name}</option> })}
-            </select>
+                <Equipment equipI={equipI} setEquipI={setEquipI} setSelectKeyI={setSelectKeyI} setSelectEquipI={setSelectEquipI} setSelectBattleI={setSelectBattleI} />
+            </div>
 
             <div>
                 {keyItemDataPost()}
                 {equipItemDataPost()}
                 {battleItemDataPost()}
             </div>
-
         </>
     )
 }
