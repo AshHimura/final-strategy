@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react"
-import { Link, useHistory } from "react-router-dom"
+import { Link, useHistory, useParams } from "react-router-dom"
 
 export const NoteList = () => {
     const [notes, updateNotes] = useState([])
+    const [filterNotes, setFilterNotes] = useState([])
     const history = useHistory()
+    const { gameId } = useParams()
 
     useEffect(
         () => {
@@ -28,7 +30,7 @@ export const NoteList = () => {
         <>
             <h2>Strategy Note</h2>
             <div className="ticketButton">
-                <button onClick={() => history.push("/notes/create")}>Create note entry!</button>
+                <button onClick={() => history.push("notes/create")}>Create note entry!</button>
             </div>
 
             <div>

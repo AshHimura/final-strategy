@@ -24,7 +24,7 @@ export const Login = () => {
             .then(exists => {
                 if (exists) {
                     localStorage.setItem("strategy_user", exists.id)
-                    history.push("/welcome")
+                    history.push("/")
                 } else {
                     existDialog.current.showModal()
                 }

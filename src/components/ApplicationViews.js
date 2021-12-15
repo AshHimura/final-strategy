@@ -2,7 +2,7 @@
 //ApplicationViews is to listen for change in URL, evaluate all Routes, and whichever matches - the respective component will be rendered 
 
 import React from "react"
-import { Route } from "react-router-dom"
+import { Route, Switch } from "react-router-dom"
 import { Games } from "./games/Game"
 import { NavBar } from "./nav/NavBar"
 import { SplashView } from "./SplashView"
@@ -22,36 +22,36 @@ export const ApplicationViews = () => {
         <>
 
 
-            <SplashView/>
+            <SplashView />
 
-            <NavBar/>
+            <NavBar />
 
-            
-            <Route exact path="/game/:gameId(\d+)/characters" component={Characters}>
-                <Characters />
-            </Route>
+            <Switch>
+                <Route exact path="/game/:gameId(\d+)/characters" component={Characters}>
+                    <Characters />
+                </Route>
 
-    
-            <Route exact path="/game/:gameId(\d+)/items" component={Items}>
-                <Items />
-            </Route>
 
-            <Route exact path="/game/:gameId(\d+)">
-                <Games />
-            </Route>
+                <Route exact path="/game/:gameId(\d+)/items" component={Items}>
+                    <Items />
+                </Route>
 
-            <Route exact path="/game/:gameId(\d+)/notes" component={NoteList}>
-                <NoteList />
-            </Route>
-            
-            <Route path="/game/:gameId(\d+)/notes/create" component={NoteForm}>
-                <NoteForm />
-            </Route>
+                <Route exact path="/game/:gameId(\d+)">
+                    <Games />
+                </Route>
 
-            <Route exact path="/game/:gameId(\d+)/notes/:noteId(\d+)" component={Note}>
-                <Note/>
-            </Route>
+                <Route exact path="/game/:gameId(\d+)/notes" component={NoteList}>
+                    <NoteList />
+                </Route>
 
+                <Route exact path="/game/:gameId(\d+)/notes/create" component={NoteForm}>
+                    <NoteForm />
+                </Route>
+
+                <Route exact path="/game/:gameId(\d+)/notes/:noteId(\d+)" component={Note}>
+                    <Note />
+                </Route>
+            </Switch>
         </>
     )
 }
