@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
 import { ItemInfo } from "./ItemInfo"
 
 export const KeyItems = () => {
 
     const [keyI, setKeyI] = useState([])
     const [selectKeyI, setSelecKeyI] = useState({})
+    const { gameId } = useParams()
 
     useEffect(
         () => {
@@ -48,7 +50,7 @@ export const KeyItems = () => {
             </select>
             
             <div>
-            <ItemInfo keyItemDataPost={keyItemDataPost}/>
+            {keyItemDataPost}
                 </div>
         </>
     )

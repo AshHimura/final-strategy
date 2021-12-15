@@ -27,7 +27,7 @@ export const BattleItems = () => {
 
     const battleItemDataPost = () => {
         return (
-            <>                
+            <>            
             <h3>Items in Battle</h3>
                 <div>Name: {selectBattleI.name}</div>         
                 <div>Effect: {selectBattleI.effect}</div>         

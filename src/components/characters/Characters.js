@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
+import { useLocation } from "react-router-dom"
 import { CharacterInfo } from "./Characterinfo"
 
 export const Characters = () => {
 
     const [chara, setChara] = useState([])
+    const [filterCh, setFilterCh] = useState([])
     const [selectCh, setSelectCh] = useState({})
+    const { gameId } = useParams()
 
     useEffect(
         () => {
@@ -15,6 +19,12 @@ export const Characters = () => {
                 })
         },
         []
+    )
+
+    useEffect(
+        () => {
+        setFilterCh(chara.filter(ch => ch.gamesId === parseInt(gameId)))
+    }, [chara]
     )
 
     const handleUserSelect = (evt) => {
@@ -41,10 +51,10 @@ export const Characters = () => {
                 Feel free to select a name to find out biographical info, abilities, and more!
             </section>
 
-            <select defaultValue="" name="character" id={chara.id} className="form-control" placeholder="Choose your character"
+            <select value={chara} name="character" id={chara.id} className="form-control" placeholder="Choose your character"
                 onChange={handleUserSelect}>
                 <option value="">Choose your character</option>
-                {chara.map(ch => { return <option key={ch.id} value={ch.id}>{ch.name}</option> })}
+                {filterCh.map(ch => { return <option key={ch.id} value={ch.id}>{ch.name}</option> })}
             </select>
             
             <div>
