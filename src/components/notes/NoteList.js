@@ -12,34 +12,43 @@ export const NoteList = () => {
             getNotes()
         }, [])
 
-    const getNotes = () => {
-        return fetch(`http://localhost:8088/notes?_expand=user`)
+        const getNotes = () => {
+            return fetch(`http://localhost:8088/notes?_expand=user`)
             .then(response => response.json())
             .then((data) => {
                 updateNotes(data)
             })
-    }
+        }
 
-    const deleteNote = (id) => {
+        useEffect(
+            () => {
+                setFilterNotes(notes.filter(no => no.gamesId === parseInt(gameId)))
+            }, [notes]
+        )
+
+        const deleteNote = (id) => {
         fetch(`http://localhost:8088/notes/${id}`, {
             method: 'DELETE'
         }).then(getNotes())
+        .then(() => {
+            history.push(`/game/${gameId}/notes`)
+        })
     }
 
     return (
         <>
             <h2>Strategy Note</h2>
             <div className="ticketButton">
-                <button onClick={() => history.push("notes/create")}>Create note entry!</button>
+                <button onClick={() => history.push(`/game/${gameId}/notes/create`)}>Create note entry!</button>
             </div>
 
             <div>
                 {
-                    notes.map(
+                    filterNotes.map(
                         (note) => {
                             return <div key={`note--${note.id}`}>
                                 <p className={`noteList`}>
-                                    <Link to={`/notes/${note.id}`}>Strat Note #{note.id}</Link>
+                                    <Link to={`/game/${gameId}/notes/${note.id}`}>Strat Note #{note.id}</Link>
                                     <button onClick={() => {
                                         deleteNote(note.id)
                                     }}>Delete</button>

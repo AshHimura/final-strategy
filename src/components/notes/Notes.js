@@ -18,29 +18,6 @@ export const Note = () => {
         [noteId]
     )
 
-    const createNote = (event) => {
-
-        const updatedNote = {
-            userNotes: note.userNotes,
-            userId: note.userId,
-            dateCompleted: note.dateCompleted
-        }
-
-        fetch(`http://localhost:8088/notes/${noteId}`, {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(updatedNote)
-        })
-            .then(() => {
-                history.push("/notes")
-            })
-    }
-
-
-
-
     return (
         <>
             <section className="note">

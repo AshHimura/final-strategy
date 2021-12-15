@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { useHistory } from "react-router";
+import { useParams, useHistory } from "react-router-dom";
 
 
 export const NoteForm = () => {
@@ -7,6 +7,7 @@ export const NoteForm = () => {
         description: "",
         
     });
+    const { gameId } = useParams()
     const history = useHistory()
 
     
@@ -16,7 +17,7 @@ export const NoteForm = () => {
         
         const newNote= { 
             userNote: note.userNotes,
-
+            gamesId: parseInt(gameId),
             userId: parseInt(localStorage.getItem("strategy_user")),
             dateCreated: ""
         }
@@ -31,7 +32,7 @@ export const NoteForm = () => {
 
         return fetch("http://localhost:8088/notes", fetchOption)
         .then(() => {
-            history.push("/notes")
+            history.push(`/game/${gameId}/notes`)
         })
     }
 
