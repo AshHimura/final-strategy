@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
+
 
 export const Equipment = ({
-    equipI,
-    setEquipI,
     setSelectKeyI,
     setSelectEquipI,
-    setSelectBattleI
+    setSelectBattleI,
 }) => {
+
+    const [equipI, setEquipI] = useState([])
+    const [filterEquip, setFilterEquip] = useState([])
+    const { gameId } = useParams()
 
     useEffect(
         () => {
-            fetch(`http://localhost:8088/equipment`)
+            fetch("http://localhost:8088/joinedItemList?_expand=equipment&_expand=games")
                 .then(res => res.json())
                 .then((data) => {
                     setEquipI(data)
@@ -19,15 +23,21 @@ export const Equipment = ({
         []
     )
 
+
+    useEffect(
+        () => {
+            setFilterEquip(equipI.filter(eq => (eq.gamesId === parseInt(gameId) && eq.equipmentId)))
+        }, [equipI]
+    )
+
     const clearKeyBattle = () => {
         setSelectKeyI({})
         setSelectBattleI({})
     }
 
     const handleEquipItemSelect = (evt) => {
-        const test = equipI.find(info => {
-            return (info.id === parseInt(evt.target.value))
-
+        const test = filterEquip.find(info => {
+            return (info.equipment.id === parseInt(evt.target.value))
         })
         clearKeyBattle()
         setSelectEquipI(test)
@@ -35,13 +45,11 @@ export const Equipment = ({
 
     return (
         <>
-            
-            <select value={equipI} name="equipItem" id={equipI.id} className="form-control" placeholder="Select equipment!"
+            <select value={equipI} name="equipItem" id={equipI.equipmentId} className="form-control" placeholder="Select equipment!"
                 onChange={handleEquipItemSelect}>
                 <option value="">Choose some equipment!</option>
-                {equipI.map(eq => { return <option key={eq.id} value={eq.id}>{eq.name}</option> })}
+                {filterEquip.map((eq => { return <option key={eq.equipmentId} value={eq.equipmentId}>{eq.equipment.name}</option> }))}
             </select>
-            
         </>
     )
 }

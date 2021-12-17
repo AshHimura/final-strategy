@@ -11,7 +11,7 @@ export const Games = () => {
                 .then(res => res.json())
                 .then(setGame)
         },
-        [gameId]  // Above function runs when the value of employeeId change
+        [gameId]  // Above function runs when the value of gameId change
     )
     
 

@@ -3,10 +3,7 @@ import { BattleItems } from "./BattleItems"
 import { KeyItems } from "./KeyItems"
 import { Equipment } from "./Equipment"
 
-export const Items = (props) => {
-    const [keyI, setKeyI] = useState([])
-    const [equipI, setEquipI] = useState([])
-    const [battleI, setBattleI] = useState([])
+export const Items = () => {
     const [selectKeyI, setSelectKeyI] = useState({})
     const [selectEquipI, setSelectEquipI] = useState({})
     const [selectBattleI, setSelectBattleI] = useState({})
@@ -14,12 +11,11 @@ export const Items = (props) => {
     const keyItemDataPost = () => {
         return (
             <>
-                {selectKeyI?.id && selectEquipI?.id ? `Can't do that, kupo!` : selectKeyI?.id && selectBattleI?.id ? `Can't do that, kupo!` : selectKeyI?.id ?
+                {selectKeyI.keyItemsId && selectEquipI.equipmentId ? `Can't do that, kupo!` : selectKeyI.keyItemsId && selectBattleI.battleItemsId ? `Can't do that, kupo!` : selectKeyI.keyItemsId ?
                     <>
-                        <h3>Key Item</h3>
-                        <div>Name: {selectKeyI.name}</div>
-                        <div>Game: {selectKeyI.game}</div>
-                        <div>Description: {selectKeyI.description}</div>
+                        <h3>Key Items from {selectKeyI?.games?.fantasyTitle}</h3>
+                        <div>Name: {selectKeyI.keyItems.name}</div>
+                        <div>Description: {selectKeyI.keyItems.description}</div>
                     </>
                     : ""}
             </>
@@ -29,13 +25,13 @@ export const Items = (props) => {
     const equipItemDataPost = () => {
         return (
             <>
-                {selectKeyI?.id && selectEquipI?.id ? "" : selectEquipI?.id && selectBattleI?.id ? `Can't do that, kupo!` : selectEquipI?.id ?
+                {selectKeyI.keyItemsId && selectEquipI.equipmentId ? "" : selectEquipI.equipmentId && selectBattleI.battleItemsId ? `Can't do that, kupo!` : selectEquipI.equipmentId ?
                     <>
-                        <h3>Equipment</h3>
-                        <div>Name: {selectEquipI.name}</div>
-                        <div>Type: {selectEquipI.type}</div>
-                        <div>Description: {selectEquipI.description}</div>
-                        <div>Effect: {selectEquipI.effect}</div>
+                        <h3>{selectEquipI?.games?.fantasyTitle} Equipment</h3>
+                        <div>Name: {selectEquipI.equipment.name}</div>
+                        <div>Type: {selectEquipI.equipment.type}</div>
+                        <div>Description: {selectEquipI.equipment.description}</div>
+                        <div>Effect: {selectEquipI.equipment.effects}</div>
                     </> : ""}
             </>
         )
@@ -44,11 +40,11 @@ export const Items = (props) => {
     const battleItemDataPost = () => {
         return (
             <>
-                {selectEquipI?.id && selectBattleI?.id ? "" : selectKeyI?.id && selectBattleI?.id ? "" : selectBattleI?.id ?
+                {selectEquipI.equipmentId && selectBattleI.battleItemsId ? "" : selectKeyI.keyItemsId && selectBattleI.battleItemsId ? "" : selectBattleI.battleItemsId ?
                     <>
-                        <h3>Items in Battle</h3>
-                        <div>Name: {selectBattleI.name}</div>
-                        <div>Effect: {selectBattleI.effect}</div>
+                        <h3>{selectBattleI?.games?.fantasyTitle} Items in Battle</h3>
+                        <div>Name: {selectBattleI.battleItems.name}</div>
+                        <div>Effect: {selectBattleI.battleItems.effect}</div>
                     </>
                     : ""}
             </>
@@ -61,11 +57,11 @@ export const Items = (props) => {
             <h2>Choose an item, kupo!</h2>
 
             <div className="item">
-                <KeyItems keyI={keyI} setKeyI={setKeyI} setSelectKeyI={setSelectKeyI} setSelectEquipI={setSelectEquipI} setSelectBattleI={setSelectBattleI} />
+                <KeyItems setSelectKeyI={setSelectKeyI} setSelectEquipI={setSelectEquipI} setSelectBattleI={setSelectBattleI} />
 
-                <BattleItems battleI={battleI} setBattleI={setBattleI} setSelectKeyI={setSelectKeyI} setSelectEquipI={setSelectEquipI} setSelectBattleI={setSelectBattleI} />
+                <BattleItems setSelectKeyI={setSelectKeyI} setSelectEquipI={setSelectEquipI} setSelectBattleI={setSelectBattleI} />
 
-                <Equipment equipI={equipI} setEquipI={setEquipI} setSelectKeyI={setSelectKeyI} setSelectEquipI={setSelectEquipI} setSelectBattleI={setSelectBattleI} />
+                <Equipment setSelectKeyI={setSelectKeyI} setSelectEquipI={setSelectEquipI} setSelectBattleI={setSelectBattleI} />
             </div>
 
             <div>

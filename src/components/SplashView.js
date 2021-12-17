@@ -13,3 +13,4 @@ export const SplashView = () => {
         </>
     )
 }
+//Route leads to welcome page

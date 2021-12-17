@@ -1,19 +1,18 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 
 export const KeyItems = ({
-    keyI,
-    setKeyI,
     setSelectKeyI,
     setSelectEquipI,
     setSelectBattleI
 }) => {
-
+    const [keyI, setKeyI] = useState([])
+    const [filterKey, setFilterKey] = useState([])
     const { gameId } = useParams()
 
     useEffect(
         () => {
-            fetch(`http://localhost:8088/keyItems`)
+            fetch(`http://localhost:8088/joinedItemList?_expand=keyItems&_expand=games`)
                 .then(res => res.json())
                 .then((data) => {
                     setKeyI(data)
@@ -22,14 +21,20 @@ export const KeyItems = ({
         []
     )
 
+    useEffect(
+        () => {
+            setFilterKey(keyI.filter(eq => (eq.gamesId === parseInt(gameId) && eq.keyItemsId)))
+        }, [keyI]
+    )
+
     const clearEquipBattle = () => {
         setSelectEquipI({})
         setSelectBattleI({})
     }
 
     const handleKeyItemSelect = (evt) => {
-        const test = keyI.find(info => {
-            return (info.id === parseInt(evt.target.value))
+        const test = filterKey.find(info => {
+            return (info.keyItems.id === parseInt(evt.target.value))
 
         })
         clearEquipBattle()
@@ -39,13 +44,11 @@ export const KeyItems = ({
 
     return (
         <>
-
-            <select value={keyI} name="keyItem" id={keyI.id} className="form-control" placeholder="Select a Key Item"
+            <select value={keyI} name="keyItem" id={keyI.keyItemsId} className="form-control" placeholder="Select a Key Item"
                 onChange={handleKeyItemSelect}>
                 <option value="">Choose a key item!</option>
-                {keyI.map(ki => { return <option key={ki.id} value={ki.id}>{ki.name}</option> })}
+                {filterKey.map(ki => { return <option key={ki.keyItemsId} value={ki.keyItemsId}>{ki.keyItems.name}</option> })}
             </select>
-
         </>
     )
 }
