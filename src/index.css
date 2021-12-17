@@ -14,8 +14,8 @@ code {
 
 @font-face {
   font-family: 'ferrum';
-  src: local('ferrum'), url(./components/Font/ferrum-webfont.woff2) format('woff2'),
-      url(./components/Font/ferrum-webfont.woff) format('woff');
+  src: local('ferrum'), url(./components/font/ferrum-webfont.woff2) format('woff2'),
+      url(./components/font/ferrum-webfont.woff) format('woff');
   font-weight: normal;
   font-style: normal;
 }
