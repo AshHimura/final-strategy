@@ -5,6 +5,7 @@ import '../../index.css'
 
 export const SplashPage = () => {
     const [games, setGame] = useState([])
+    const [user, setUser] = useState([])
 
     useEffect(
         () => {

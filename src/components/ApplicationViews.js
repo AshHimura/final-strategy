@@ -15,8 +15,8 @@ import { NoteForm } from "./notes/NoteForm"
 
 
 
-
-
+//Splashview first & separate component to avoid Navbar, nav will render for everything else, exact used due to gameId use
+//Routes main page for all components
 export const ApplicationViews = () => {
     return (
         <>
@@ -27,12 +27,12 @@ export const ApplicationViews = () => {
             <NavBar />
 
             <Switch>
-                <Route exact path="/game/:gameId(\d+)/characters" component={Characters}>
+                <Route exact path="/game/:gameId(\d+)/characters" >
                     <Characters />
                 </Route>
 
 
-                <Route exact path="/game/:gameId(\d+)/items" component={Items}>
+                <Route exact path="/game/:gameId(\d+)/items">
                     <Items />
                 </Route>
 
@@ -40,15 +40,17 @@ export const ApplicationViews = () => {
                     <Games />
                 </Route>
 
-                <Route exact path="/game/:gameId(\d+)/notes" component={NoteList}>
+
+                <Route exact path="/game/:gameId(\d+)/notes" >
                     <NoteList />
                 </Route>
 
-                <Route exact path="/game/:gameId(\d+)/notes/create" component={NoteForm}>
+
+                <Route exact path="/game/:gameId(\d+)/notes/create" >
                     <NoteForm />
                 </Route>
 
-                <Route path="/game/:gameId(\d+)/notes/:noteId(\d+)" component={Note}>
+                <Route path="/game/:gameId(\d+)/notes/:noteId(\d+)" >
                     <Note />
                 </Route>
             </Switch>

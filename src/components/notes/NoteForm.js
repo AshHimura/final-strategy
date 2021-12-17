@@ -16,10 +16,10 @@ export const NoteForm = () => {
         event.preventDefault()
         
         const newNote= { 
-            userNote: note.userNotes,
+            userNote: note.userNote,
             gamesId: parseInt(gameId),
             userId: parseInt(localStorage.getItem("strategy_user")),
-            dateCreated: ""
+            dateCreated: new Date().toLocaleString()
         }
 
         const fetchOption = {
@@ -30,7 +30,7 @@ export const NoteForm = () => {
             body: JSON.stringify(newNote)
         }
 
-        return fetch("http://localhost:8088/notes", fetchOption)
+        return fetch("http://localhost:8088/strategyNotes", fetchOption)
         .then(() => {
             history.push(`/game/${gameId}/notes`)
         })
@@ -50,7 +50,7 @@ export const NoteForm = () => {
                         onChange={
                             (evt) => {
                                 const copy = {...note}
-                                copy.userNotes = evt.target.value
+                                copy.userNote = evt.target.value
                                 updateNote(copy)
                             }
                         } /> 

@@ -6,32 +6,36 @@ export const NoteList = () => {
     const [filterNotes, setFilterNotes] = useState([])
     const history = useHistory()
     const { gameId } = useParams()
+    const loggedInUser = localStorage.getItem("strategy_user")
 
     useEffect(
         () => {
-            getNotes()
-        }, [])
+            fetch(`http://localhost:8088/strategyNotes?userId=${loggedInUser}`)
+                .then(response => response.json())
+                .then((data) => {
+                    updateNotes(data)
+                })
+        }, []
+    )
 
-        const getNotes = () => {
-            return fetch(`http://localhost:8088/notes?_expand=user`)
-            .then(response => response.json())
-            .then((data) => {
-                updateNotes(data)
-            })
-        }
+    useEffect(
+        () => {
+            setFilterNotes(notes.filter((no) => no.gamesId === parseInt(gameId)))
+        }, [notes]
+    )
 
-        useEffect(
-            () => {
-                setFilterNotes(notes.filter(no => no.gamesId === parseInt(gameId)))
-            }, [notes]
-        )
-
-        const deleteNote = (id) => {
-        fetch(`http://localhost:8088/notes/${id}`, {
-            method: 'DELETE'
-        }).then(getNotes())
-        .then(() => {
-            history.push(`/game/${gameId}/notes`)
+    const deleteNote = (id) => {
+        return fetch(`http://localhost:8088/strategyNotes/${id}`, {
+            method: "DELETE",
+        }).then(() => {
+            fetch(`http://localhost:8088/strategyNotes?userId=${loggedInUser}`)
+                .then(response => response.json())
+                .then((data) => {
+                    setFilterNotes(data)
+                })
+                .then(() => {
+                    history.push(`/game/${gameId}/notes`)
+                })
         })
     }
 

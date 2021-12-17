@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react"
-import { useParams, useHistory } from "react-router-dom"
+import { useParams } from "react-router-dom"
 
 export const Note = () => {
     const [note, assignNote] = useState({})
     const { noteId } = useParams()
-    const history = useHistory()
 
     useEffect(
         () => {
-            return fetch(`http://localhost:8088/notes/${noteId}`)
+            return fetch(`http://localhost:8088/strategyNotes/${noteId}`)
                 .then(response => response.json())
                 .then((data) => {
                     assignNote(data)
@@ -21,7 +20,7 @@ export const Note = () => {
     return (
         <>
             <section className="note">
-                <div className="note__description">{note.userNote}</div>
+                <div className="note__description">{note.userNote} created on {note.dateCreated}</div>
             </section>
         </>
     )
