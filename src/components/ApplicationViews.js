@@ -24,33 +24,38 @@ export const ApplicationViews = () => {
 
             <SplashView />
 
-            <NavBar />
 
             <Switch>
                 <Route exact path="/game/:gameId(\d+)/characters" >
+                <NavBar />
                     <Characters />
                 </Route>
 
 
                 <Route exact path="/game/:gameId(\d+)/items">
+                <NavBar />
                     <Items />
                 </Route>
 
                 <Route exact path="/game/:gameId(\d+)">
+                <NavBar />
                     <Games />
                 </Route>
 
 
                 <Route exact path="/game/:gameId(\d+)/notes" >
+                <NavBar />
                     <NoteList />
                 </Route>
 
 
                 <Route exact path="/game/:gameId(\d+)/notes/create" >
+                <NavBar />
                     <NoteForm />
                 </Route>
 
                 <Route path="/game/:gameId(\d+)/notes/:noteId(\d+)" >
+                <NavBar />
                     <Note />
                 </Route>
             </Switch>
