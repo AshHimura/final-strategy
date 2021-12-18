@@ -16,7 +16,7 @@ export const Login = () => {
         return fetch(`http://localhost:8088/users?email=${email}`)
             .then(res => res.json())
             .then(user => user.length ? user[0] : false)
-    }
+    } //checks if user exists via length of index 0 of user array
 
     const handleLogin = (e) => {
         e.preventDefault()
