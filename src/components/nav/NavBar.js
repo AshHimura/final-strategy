@@ -1,11 +1,11 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { useLocation } from "react-router-dom"
 import { Link } from "react-router-dom"
 import "./NavBar.css"
 
 //Link component generates Anchor tags for
 //the "To" attribute is the htag attribute for Link anchor tag, both combine to create link in the DOM
-export const NavBar = (props) => {
+export const NavBar = ({blehX}) => {
     const location = useLocation()
     const [ , , gameId, ] = location.pathname.split("/")
 
@@ -24,7 +24,7 @@ export const NavBar = (props) => {
             </li>
             
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/">Change Game!</Link>
+                <Link className="navbar__link" to="/welcome">Change Game!</Link>
             </li>
 
             <li className="navbar__item active">

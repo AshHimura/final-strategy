@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react'
-import useSound from 'use-sound'
-import intro from '../music/intro.mp3'
+import React, { useState, useEffect, useRef } from 'react'
 import { Link } from "react-router-dom";
+import intro from '../music/intro.mp3'
 import './SplashPage.css'
 import '../../index.css'
 
-export const DupeSplash = () => {
+export const DupeSplash = (props) => {
     const [games, setGame] = useState([])
     const [users, setUsers] = useState([])
     const [filUsers, setFilUsers] = useState([])
-    const [isPlaying, setIsPlaying] = useState(false)
-    const [play, { stop }] = useSound(intro, { volume: 0.08 })
+    const audio = useRef()
+    const ff6Sp = useRef()
+    const ff7RSp = useRef()
 
     useEffect(
         () => {
@@ -37,19 +37,26 @@ export const DupeSplash = () => {
         }, [users]
     )
 
-    const playSong = () => {
-        setIsPlaying(true)
-        play()
-    }
+    //Enables audio useRef to play upon page load, sets volume to decent level at max volume for device, and loops
+    useEffect(() => {
+        audio.current = new Audio(intro)
+        audio.current.play()
+        audio.current.volume = 1
+        audio.current.loop = true
+    }, [])
+    
+    //forces audio to pause/stop when navigating away from page
+    useEffect(() => {
+        return () => {
+            audio.current.pause()
+        }
+    }, [])
 
-    const stopSong = () => {
-        setIsPlaying(false)
-        stop()
-    }
     return (
         <>
             <div className="container">
 
+                
                 <div>
                     <li className="splashbar__item active">
                         <Link className="splashbar__link" to="#" onClick={
@@ -64,7 +71,7 @@ export const DupeSplash = () => {
                         {
                             games.map((gameObj) => {
                                 return <Link to={`/game/${parseInt(gameObj.id)}`} id={gameObj.id}>
-                                    <img key={gameObj.id} onClick={isPlaying ? stopSong : playSong} src={`http://localhost:8080/${gameObj.img}`} alt={gameObj.alt} />
+                                    <img key={gameObj.id} src={`http://localhost:8080/${gameObj.img}`} alt={gameObj.alt} />
                                 </Link>
                             })}
                     </div>
@@ -75,4 +82,4 @@ export const DupeSplash = () => {
     )
 }
 
-//Logout button to escape from page in general
+//Logout button to escape from page in genera

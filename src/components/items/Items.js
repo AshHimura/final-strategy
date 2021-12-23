@@ -21,7 +21,6 @@ export const Items = () => {
             </>
         )
     }
-
     const equipItemDataPost = () => {
         return (
             <>
