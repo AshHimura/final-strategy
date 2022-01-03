@@ -38,7 +38,7 @@ export const SplashPage = () => {
     useEffect(() => {
         audio.current = new Audio(intro)
         audio.current.play()
-        audio.current.volume = 1
+        audio.current.volume = 0.04
         audio.current.loop = true
     }, [])
 
@@ -61,7 +61,7 @@ export const SplashPage = () => {
                         }>Logout!</Link>
                     </li>
 
-                    <h1>Final Strategy {filUsers ? filUsers.userName : ""}</h1>
+                    <h1>Welcome {filUsers ? filUsers.userName : ""} to Final Strategy</h1>
                     <div>
                         {
                             games.map((gameObj) => {

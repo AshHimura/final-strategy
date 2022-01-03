@@ -14,13 +14,16 @@
 }
 
 h1{
-    font-family: ferrum;
+    font-family: 'ferrum';
+    margin-left:90px;
+    color: rgb(114, 112, 112);
 }
 
 img {
     border-radius: 39% 9px;
     padding: 70px;
     width: 180px;
+    margin-left: 130px;
 }
 
 img:hover {
@@ -35,11 +38,3 @@ img:hover {
     justify-content: left;
     font-size: 12px;
 }
-
-/* .navbar {
-    display: none;
-}
-
-.navbar__item {
-    display: none;
-} */

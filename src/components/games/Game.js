@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef, useCallback } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import { useParams } from "react-router-dom"
 import zanarkand from '../music/To_Zanarkand.flac'
-//import overW from '../music/FF6Overworld.mp3'
+import overW from '../music/Terra.mp3'
 import '../../index.css'
 import './Games.css'
 
@@ -12,7 +12,7 @@ export const Games = () => {
     const ffxSp = useRef()
     //useRef returns an object whose .current property is initialized to whatever the passed argument is
 
-    //const ff6Sp = useRef()
+    const ff6Sp = useRef()
 
     const { gameId } = useParams()
     //object of key/value pairs of URL parameters. Must match with current route
@@ -32,7 +32,7 @@ export const Games = () => {
             if (parseInt(gameId) === 2) {
                 ffxSp.current = new Audio(zanarkand)
                 ffxSp.current.play()
-                ffxSp.current.volume = 1
+                ffxSp.current.volume = 0.03
                 ffxSp.current.loop = true 
             }
         }, [])  
@@ -46,30 +46,32 @@ export const Games = () => {
         }
     }, [])
 
-    //     useEffect(() => {
-    //         if (parseInt(gameId) === 1) {
-    //             ff6Sp.current = new Audio(overW)
-    //             ff6Sp.current.play()
-    //             ff6Sp.current.volume = 0.03
-    //             ff6Sp.current.loop = true 
-    //         }
-    //     }, [])
+        useEffect(() => {
+            if (parseInt(gameId) === 1) {
+                ff6Sp.current = new Audio(overW)
+                ff6Sp.current.play()
+                ff6Sp.current.volume = 0.05
+                ff6Sp.current.loop = true 
+            }
+        }, [])
 
-    // useEffect(() => {
-    //     if (parseInt(gameId) === 1) {
-    //         return () => {
-    //             ff6Sp.current.pause()
-    //         }
-    //     }
-    // }, [])    
+    useEffect(() => {
+        if (parseInt(gameId) === 1) {
+            return () => {
+                ff6Sp.current.pause()
+            }
+        }
+    }, [])    
 
     return (
         <>
+        <div></div>
+    
             <div className={ game.id === 1 ? "container_1" : game.id === 2 ? "container_2" : game.id === 3 ? "container_3" : "" }>
 
             <section className="gameHome">
-                <h2 className="game__name">{game.fantasyTitle}</h2>
-                <div>
+                <h2 className={ game.id === 1 ? "game__name1" : game.id === 2 ? "game__name2" : game.id === 3 ? "game__name3" : "" }>{game.fantasyTitle}</h2>
+                <div className={ game.id === 1 ? "gameWelcome_1" : game.id === 2 ? "gameWelcome_2" : game.id === 3 ? "gameWelcome_3" : "" }>
                     Welcome to the landing page of {game.fantasyTitle}! Please feel free to view character data, item info, or start making notes for your journey!
                 </div>
             </section>

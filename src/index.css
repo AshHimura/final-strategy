@@ -13,9 +13,23 @@ code {
 }
 
 @font-face {
+  font-family: 'ffOldSchool';
+  src: local('ffOldSchool'), url(./components/font/final_fantasy_36_font.woff) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
   font-family: 'ferrum';
   src: local('ferrum'), url(./components/font/ferrum-webfont.woff2) format('woff2'),
       url(./components/font/ferrum-webfont.woff) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'consolas';
+  src: local('consolas'), url(./components/font/consolas-Italic.woff2) format('woff2'),
+      url(./components/font/consolas-Italic.woff) format('woff');
   font-weight: normal;
   font-style: normal;
 }

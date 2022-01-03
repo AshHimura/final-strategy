@@ -1,0 +1,108 @@
+
+.notes_1{
+    background-image: url(../images/background/ff6pub.jpeg);
+    height: 110vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: -97px;
+    font-family: 'ffOldSchool'; 
+}
+
+.notes__description1{
+    border: solid 1px #424542;
+    box-shadow: 1px 1px #e7dfe7,
+                -1px -1px #e7dfe7,
+                1px -1px #e7dfe7,
+                -1px 1px #e7dfe7,
+                0 -2px #9c9a9c,
+                -1px 0 #7b757b,
+                0 2px #424542;
+    height: 200px;            
+    width: 500px;
+    padding: 4px 5px;
+    
+    background: #04009d;
+    background: -moz-linear-gradient(top,  #04009d 0%, #06004d 100%);
+    background: -webkit-linear-gradient(top,  #04009d 0%,#06004d 100%);
+    background: -o-linear-gradient(top,  #04009d 0%,#06004d 100%);
+    background: -ms-linear-gradient(top,  #04009d 0%,#06004d 100%);
+    background: linear-gradient(to bottom,  #04009d 0%,#06004d 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#04009d', endColorstr='#06004d',GradientType=0 );
+
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 7px;
+    border-radius: 6px;
+    font-family: 'ffOldSchool';
+    color: #eff1ff;
+    text-shadow: 2px 2px #212421,
+                1px 1px #212021;
+    font-size: 25px;
+    font-weight: normal;
+    margin-top: 13px;
+    margin-left: 500px; 
+    overflow: auto;
+}
+.notesHome_1{
+    background-image: url(../images/background/ff6worldmap.jpg);
+    height: 170vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: 30px;
+    margin-top: -97px;
+    font-family: 'ffOldSchool'; 
+}
+
+.notesHomeTitle_1{
+    color: black;
+    font-family: ffOldSchool;
+}
+
+.noteEntry_1{
+    background-image: url(../images/background/ff6Empire.png);
+    height: 170vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: 30px;
+    margin-top: -97px;
+    font-family: 'ffOldSchool'; 
+}
+
+.noteFormTitle_1{
+    font-family: ffOldSchool;
+}
+
+.noteForm_1{
+    border: solid 1px #424542;
+    box-shadow: 1px 1px #e7dfe7,
+                -1px -1px #e7dfe7,
+                1px -1px #e7dfe7,
+                -1px 1px #e7dfe7,
+                0 -2px #9c9a9c,
+                -1px 0 #7b757b,
+                0 2px #424542;
+    height: 300px;            
+    width: 500px;
+    padding: 5px 10px;
+    
+    
+    background: #04009d;
+    background: -moz-linear-gradient(top,  #04009d 0%, #06004d 100%);
+    background: -webkit-linear-gradient(top,  #04009d 0%,#06004d 100%);
+    background: -o-linear-gradient(top,  #04009d 0%,#06004d 100%);
+    background: -ms-linear-gradient(top,  #04009d 0%,#06004d 100%);
+    background: linear-gradient(to bottom,  #04009d 0%,#06004d 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#04009d', endColorstr='#06004d',GradientType=0 );
+
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 7px;
+    border-radius: 6px;
+    font-family: 'ffOldSchool';
+    color: #eff1ff;
+    text-shadow: 2px 2px #212421,
+                1px 1px #212021;
+    font-size: 25px;
+    font-weight: normal;
+    margin-top: 90px;
+    margin-left: 250px;
+    overflow: auto;
+}

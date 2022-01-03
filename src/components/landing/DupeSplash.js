@@ -41,7 +41,7 @@ export const DupeSplash = (props) => {
     useEffect(() => {
         audio.current = new Audio(intro)
         audio.current.play()
-        audio.current.volume = 1
+        audio.current.volume = 0.04
         audio.current.loop = true
     }, [])
     
