@@ -11,6 +11,7 @@ import { Items } from "./items/Items"
 import { NoteList } from "./notes/NoteList"
 import { Note } from "./notes/Notes"
 import { NoteForm } from "./notes/NoteForm"
+import { DupeSplash } from "./landing/DupeSplash"
 
 
 
@@ -24,6 +25,9 @@ export const ApplicationViews = () => {
 
             <SplashView />
 
+            <Route exact path="/welcome">
+                <DupeSplash/>
+            </Route>
 
             <Switch>
                 <Route exact path="/game/:gameId(\d+)/characters" >
