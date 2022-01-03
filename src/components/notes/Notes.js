@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef } from "react"
 import { useParams } from "react-router-dom"
 import johnny from '../music/Johnny_c_bad.mp3'
+import gagazet from '../music/gagazet.flac'
+import hollow from '../music/Hollow_skies.mp3'
 import './Notes.css'
 
 
@@ -11,6 +13,8 @@ export const Note = () => {
     const { gameId } = useParams()
 
     const ff6pub = useRef()
+    const ffxpub = useRef()
+    const ff7rpub = useRef()
 
         useEffect(
             () => {
@@ -46,6 +50,38 @@ export const Note = () => {
             if (parseInt(gameId) === 1) {
                 return () => {
                     ff6pub.current.pause()
+                }
+            }
+        }, [])
+        useEffect(() => {
+            if (parseInt(gameId) === 2) {
+                ffxpub.current = new Audio(gagazet)
+                ffxpub.current.play()
+                ffxpub.current.volume = 0.09
+                ffxpub.current.loop = true
+            }
+        }, [])        
+    
+        useEffect(() => {
+            if (parseInt(gameId) === 2) {
+                return () => {
+                    ffxpub.current.pause()
+                }
+            }
+        }, [])
+        useEffect(() => {
+            if (parseInt(gameId) === 3) {
+                ff7rpub.current = new Audio(hollow)
+                ff7rpub.current.play()
+                ff7rpub.current.volume = 0.09
+                ff7rpub.current.loop = true
+            }
+        }, [])        
+    
+        useEffect(() => {
+            if (parseInt(gameId) === 3) {
+                return () => {
+                    ff7rpub.current.pause()
                 }
             }
         }, [])

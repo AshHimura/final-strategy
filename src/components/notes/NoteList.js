@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef } from "react"
 import { Link, useHistory, useParams } from "react-router-dom"
 import world from '../music/Searching_for_friends.mp3'
+import bevelle from '../music/via_purifico.flac'
+import ruin from '../music/Sector7Ruins.flac'
 
 export const NoteList = () => {
     const [notes, updateNotes] = useState([])
@@ -11,6 +13,8 @@ export const NoteList = () => {
     const loggedInUser = localStorage.getItem("strategy_user")
 
     const ff6Mood = useRef()
+    const ffxMood = useRef()
+    const ff7rMood = useRef()
 
     useEffect(
         () => {
@@ -50,6 +54,40 @@ export const NoteList = () => {
         if (parseInt(gameId) === 1) {
             return () => {
                 ff6Mood.current.pause()
+            }
+        }
+    }, [])
+
+    useEffect(() => {
+        if (parseInt(gameId) === 2) {
+            ffxMood.current = new Audio(bevelle)
+            ffxMood.current.play()
+            ffxMood.current.volume = 0.09
+            ffxMood.current.loop = true
+        }
+    }, [])        
+
+    useEffect(() => {
+        if (parseInt(gameId) === 2) {
+            return () => {
+                ffxMood.current.pause()
+            }
+        }
+    }, [])
+
+    useEffect(() => {
+        if (parseInt(gameId) === 3) {
+            ff7rMood.current = new Audio(ruin)
+            ff7rMood.current.play()
+            ff7rMood.current.volume = 0.09
+            ff7rMood.current.loop = true
+        }
+    }, [])        
+
+    useEffect(() => {
+        if (parseInt(gameId) === 3) {
+            return () => {
+                ff7rMood.current.pause()
             }
         }
     }, [])

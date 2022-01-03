@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from "react"
 import { useParams, useHistory } from "react-router-dom";
 import './Notes.css'
 import empire from '../music/ff6Empire.mp3'
+import desert from '../music/Bikanel_island.flac'
+import experiment from '../music/Hojo_lab.mp3'
 
 
 export const NoteForm = () => {
@@ -14,6 +16,8 @@ export const NoteForm = () => {
     const history = useHistory()
 
     const ff6Setting = useRef()
+    const ffxSetting = useRef()
+    const ff7rSetting = useRef()
 
     useEffect(
         () => {
@@ -37,6 +41,40 @@ export const NoteForm = () => {
         if (parseInt(gameId) === 1) {
             return () => {
                 ff6Setting.current.pause()
+            }
+        }
+    }, [])
+
+    useEffect(() => {
+        if (parseInt(gameId) === 2) {
+            ffxSetting.current = new Audio(desert)
+            ffxSetting.current.play()
+            ffxSetting.current.volume = 0.04
+            ffxSetting.current.loop = true
+        }
+    }, [])        
+
+    useEffect(() => {
+        if (parseInt(gameId) === 2) {
+            return () => {
+                ffxSetting.current.pause()
+            }
+        }
+    }, [])
+
+    useEffect(() => {
+        if (parseInt(gameId) === 3) {
+            ff7rSetting.current = new Audio(experiment)
+            ff7rSetting.current.play()
+            ff7rSetting.current.volume = 0.8
+            ff7rSetting.current.loop = true
+        }
+    }, [])        
+
+    useEffect(() => {
+        if (parseInt(gameId) === 3) {
+            return () => {
+                ff7rSetting.current.pause()
             }
         }
     }, [])

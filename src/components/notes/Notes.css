@@ -1,6 +1,5 @@
-
 .notes_1{
-    background-image: url(../images/background/ff6pub.jpeg);
+    background-image: url(../images/background/ff6/ff6pub.jpeg);
     height: 110vh;
     background-size: cover;
     background-repeat: no-repeat;
@@ -43,7 +42,7 @@
     overflow: auto;
 }
 .notesHome_1{
-    background-image: url(../images/background/ff6worldmap.jpg);
+    background-image: url(../images/background/ff6/ff6worldmap.jpg);
     height: 170vh;
     background-size: cover;
     background-repeat: no-repeat;
@@ -58,7 +57,7 @@
 }
 
 .noteEntry_1{
-    background-image: url(../images/background/ff6Empire.png);
+    background-image: url(../images/background/ff6/ff6Empire.png);
     height: 170vh;
     background-size: cover;
     background-repeat: no-repeat;
@@ -97,6 +96,223 @@
     -moz-border-radius: 7px;
     border-radius: 6px;
     font-family: 'ffOldSchool';
+    color: #eff1ff;
+    text-shadow: 2px 2px #212421,
+                1px 1px #212021;
+    font-size: 25px;
+    font-weight: normal;
+    margin-top: 90px;
+    margin-left: 250px;
+    overflow: auto;
+}
+
+.notes_2{
+    background-image: url(../images/background/ffx/ffxNotes.jpg);
+    height: 110vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: -97px;
+    font-family: 'consolas'; 
+}
+
+.notes__description2{
+    border: solid 1px #424542;
+    box-shadow: 1px 1px #e7dfe7,
+                -1px -1px #e7dfe7,
+                1px -1px #e7dfe7,
+                -1px 1px #e7dfe7,
+                0 -2px #9c9a9c,
+                -1px 0 #7b757b,
+                0 2px #424542;
+    height: 200px;            
+    width: 500px;
+    padding: 4px 5px;
+    
+    background: #04009d;
+    background: -moz-linear-gradient(top,  #04009d 0%, #06004d 100%);
+    background: -webkit-linear-gradient(top,  #04009d 0%,#06004d 100%);
+    background: -o-linear-gradient(top,  #04009d 0%,#06004d 100%);
+    background: -ms-linear-gradient(top,  #04009d 0%,#06004d 100%);
+    background: linear-gradient(to bottom,  #04009d 0%,#06004d 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#04009d', endColorstr='#06004d',GradientType=0 );
+
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 7px;
+    border-radius: 6px;
+    font-family: 'consolas';
+    color: #eff1ff;
+    text-shadow: 2px 2px #212421,
+                1px 1px #212021;
+    font-size: 25px;
+    font-weight: normal;
+    margin-top: 13px;
+    margin-left: 500px; 
+    overflow: auto;
+}
+.notesHome_2{
+    background-image: url(../images/background/ffx/ffxNoteList.jpeg);
+    height: 170vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: 30px;
+    margin-top: -97px;
+    font-family: 'consolas'; 
+}
+
+.notesHomeTitle_2{
+    color: black;
+    font-family: consolas;
+}
+
+.noteEntry_2{
+    background-image: url(../images/background/ffx/ffxNoteForm.jpeg);
+    height: 170vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: 30px;
+    margin-top: -97px;
+    font-family: 'consolas'; 
+}
+
+.noteFormTitle_2{
+    font-family: consolas;
+}
+
+.noteForm_2{
+    border: solid 1px #424542;
+    box-shadow: 1px 1px #e7dfe7,
+                -1px -1px #e7dfe7,
+                1px -1px #e7dfe7,
+                -1px 1px #e7dfe7,
+                0 -2px #9c9a9c,
+                -1px 0 #7b757b,
+                0 2px #424542;
+    height: 300px;            
+    width: 500px;
+    padding: 5px 10px;
+    
+    
+    background: #04009d;
+    background: -moz-linear-gradient(top,  #04009d 0%, #06004d 100%);
+    background: -webkit-linear-gradient(top,  #04009d 0%,#06004d 100%);
+    background: -o-linear-gradient(top,  #04009d 0%,#06004d 100%);
+    background: -ms-linear-gradient(top,  #04009d 0%,#06004d 100%);
+    background: linear-gradient(to bottom,  #04009d 0%,#06004d 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#04009d', endColorstr='#06004d',GradientType=0 );
+
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 7px;
+    border-radius: 6px;
+    font-family: 'consolas';
+    color: #eff1ff;
+    text-shadow: 2px 2px #212421,
+                1px 1px #212021;
+    font-size: 25px;
+    font-weight: normal;
+    margin-top: 90px;
+    margin-left: 250px;
+    overflow: auto;
+}
+
+.notes_3{
+    background-image: url(../images/background/ff7r/ff7rnotes.jpeg);
+    height: 110vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: -97px;
+    font-family: 'Optima_Roman'; 
+}
+
+.notes__description3{
+    border: solid 1px #424542;
+    box-shadow: 1px 1px #e7dfe7,
+                -1px -1px #e7dfe7,
+                1px -1px #e7dfe7,
+                -1px 1px #e7dfe7,
+                0 -2px #9c9a9c,
+                -1px 0 #7b757b,
+                0 2px #424542;
+    height: 200px;            
+    width: 500px;
+    padding: 4px 5px;
+    
+    background: #04009d;
+    background: -moz-linear-gradient(top,  #04009d 0%, #06004d 100%);
+    background: -webkit-linear-gradient(top,  #04009d 0%,#06004d 100%);
+    background: -o-linear-gradient(top,  #04009d 0%,#06004d 100%);
+    background: -ms-linear-gradient(top,  #04009d 0%,#06004d 100%);
+    background: linear-gradient(to bottom,  #04009d 0%,#06004d 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#04009d', endColorstr='#06004d',GradientType=0 );
+
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 7px;
+    border-radius: 6px;
+    font-family: 'Optima_Roman';
+    color: #eff1ff;
+    text-shadow: 2px 2px #212421,
+                1px 1px #212021;
+    font-size: 25px;
+    font-weight: normal;
+    margin-top: 13px;
+    margin-left: 500px; 
+    overflow: auto;
+}
+.notesHome_3{
+    background-image: url(../images/background/ff7r/ff7noteList.jpeg);
+    height: 170vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: 30px;
+    margin-top: -97px;
+    font-family: 'Optima_Roman'; 
+}
+
+.notesHomeTitle_3{
+    color: rgb(255, 255, 255);
+    font-family: Optima_Roman;
+    margin-left: 30px;
+}
+
+.noteEntry_3{
+    background-image: url(../images/background/ff7r/ff7rNoteForm.jpeg);
+    height: 170vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: 30px;
+    margin-top: -97px;
+    font-family: 'Optima_Roman'; 
+}
+
+.noteFormTitle_3{
+    font-family: Optima_Roman;
+}
+
+.noteForm_3{
+    border: solid 1px #424542;
+    box-shadow: 1px 1px #e7dfe7,
+                -1px -1px #e7dfe7,
+                1px -1px #e7dfe7,
+                -1px 1px #e7dfe7,
+                0 -2px #9c9a9c,
+                -1px 0 #7b757b,
+                0 2px #424542;
+    height: 300px;            
+    width: 500px;
+    padding: 5px 10px;
+    
+    
+    background: #04009d;
+    background: -moz-linear-gradient(top,  #04009d 0%, #06004d 100%);
+    background: -webkit-linear-gradient(top,  #04009d 0%,#06004d 100%);
+    background: -o-linear-gradient(top,  #04009d 0%,#06004d 100%);
+    background: -ms-linear-gradient(top,  #04009d 0%,#06004d 100%);
+    background: linear-gradient(to bottom,  #04009d 0%,#06004d 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#04009d', endColorstr='#06004d',GradientType=0 );
+
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 7px;
+    border-radius: 6px;
+    font-family: 'Optima_Roman';
     color: #eff1ff;
     text-shadow: 2px 2px #212421,
                 1px 1px #212021;

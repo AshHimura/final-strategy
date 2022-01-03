@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react"
 import { useParams } from "react-router-dom"
 import zanarkand from '../music/To_Zanarkand.flac'
 import overW from '../music/Terra.mp3'
+import merc from '../music/Bombing_mission.flac'
 import '../../index.css'
 import './Games.css'
 
@@ -13,6 +14,7 @@ export const Games = () => {
     //useRef returns an object whose .current property is initialized to whatever the passed argument is
 
     const ff6Sp = useRef()
+    const ff7rSp = useRef()
 
     const { gameId } = useParams()
     //object of key/value pairs of URL parameters. Must match with current route
@@ -59,6 +61,23 @@ export const Games = () => {
         if (parseInt(gameId) === 1) {
             return () => {
                 ff6Sp.current.pause()
+            }
+        }
+    }, [])
+
+        useEffect(() => {
+            if (parseInt(gameId) === 3) {
+                ff7rSp.current = new Audio(merc)
+                ff7rSp.current.play()
+                ff7rSp.current.volume = 0.05
+                ff7rSp.current.loop = true 
+            }
+        }, [])
+
+    useEffect(() => {
+        if (parseInt(gameId) === 3) {
+            return () => {
+                ff7rSp.current.pause()
             }
         }
     }, [])    

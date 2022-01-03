@@ -1,5 +1,5 @@
 .container_1 {
-    background-image: url(../images/background/ff6Splash.png);
+    background-image: url(../images/background/ff6/ff6Splash.png);
     height: 110vh;
     background-size: 1850px;
     background-repeat: no-repeat;
@@ -14,7 +14,7 @@
     }
 }
 .container_2 {
-    background-image: url(../images/background/ffxSplash.png);
+    background-image: url(../images/background/ffx/ffxSplash.png);
     height: 110vh;
     background-size: 1850px;
     background-repeat: no-repeat;
@@ -29,7 +29,7 @@
     }
 }
 .container_3 {
-    background-image: url(../images/background/ff7rSplash.png);
+    background-image: url(../images/background/ff7r/ff7rSplash.png);
     height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
@@ -102,5 +102,23 @@ line-height: 3.8;
 color: #ffffff;
 margin-left: 30px;
 height: 5vh;
-margin-top: 40px
+margin-top: px
+}
+
+.gameWelcome_3 {
+    font-family: 'Optima_Roman';
+    color: #000000;
+    font-size: 30px;
+    margin-top: 470px;
+    margin-left: 30px;
+    line-height: 1.6;
+}
+
+.game__name3 {
+font-family: 'Optima_Roman';
+line-height: 5.8;
+color: #ffffff;
+margin-left: 30px;
+height: 1vh;
+margin-top: 45x
 }

@@ -5,6 +5,8 @@ import { KeyItems } from "./KeyItems"
 import { Equipment } from "./Equipment"
 import "./Items.css"
 import battle6 from '../music/Battle_Theme.mp3'
+import battlex from '../music/ffx_battle.flac'
+import battle7 from '../music/battles_begin.mp3'
 
 
 export const Items = () => {
@@ -15,6 +17,8 @@ export const Items = () => {
     const { gameId } = useParams()
 
     const ff6Fight = useRef()
+    const ffxFight = useRef()
+    const ff7rFight = useRef()
 
     useEffect(
         () => {
@@ -39,6 +43,42 @@ export const Items = () => {
         if (parseInt(gameId) === 1) {
             return () => {
                 ff6Fight.current.pause()
+            }
+        }
+    }, [])
+
+    useEffect(() => {
+        if (parseInt(gameId) === 2) {
+            ffxFight.current = new Audio(battlex)
+            ffxFight.current.play()
+            ffxFight.current.volume = 0.09
+            ffxFight.current.loop = true
+        }
+    }, [])
+
+    //After render, if page id  = 2, music pauses
+    useEffect(() => {
+        if (parseInt(gameId) === 2) {
+            return () => {
+                ffxFight.current.pause()
+            }
+        }
+    }, [])
+
+    useEffect(() => {
+        if (parseInt(gameId) === 3) {
+            ff7rFight.current = new Audio(battle7)
+            ff7rFight.current.play()
+            ff7rFight.current.volume = 0.09
+            ff7rFight.current.loop = true
+        }
+    }, [])
+
+    //After render, if page id  = 2, music pauses
+    useEffect(() => {
+        if (parseInt(gameId) === 3) {
+            return () => {
+                ff7rFight.current.pause()
             }
         }
     }, [])
