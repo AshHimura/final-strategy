@@ -5,6 +5,7 @@ import { Strategy } from "./components/Strategy";
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
+
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>

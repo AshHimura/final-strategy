@@ -58,11 +58,11 @@
 
 .charPg_2{
     background-image: url(../images/background/ffx/ffxChar2.png);
-    height: 170vh;
-    background-size: cover;
+    height: 190vh;
+    background-size: 1800px;
     background-repeat: no-repeat;
     font-size: 24px;
-    margin-top: -53px;
+    margin-top: -57px;
     font-family: 'consolas'; 
 }
 
@@ -87,7 +87,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     font-size: 24px;
-    margin-top: -53px;
+    margin-top: -57px;
     font-family: 'ffOldSchool'; 
 }
 .charTxt_3{
@@ -104,13 +104,18 @@
 }
 
 .profile{
-    margin-left: 280px;
+    margin-left: 10px;
     width: 200px;
     height: 120px;
 }
 
-.profile img {
-        width: 100%;
+.charImg{
+    margin-left: 70px;
+    width: 120px;
+    height: 120px;
+}
+.profile  {
+        width: 250%;
         height: auto;
 }
 
@@ -126,10 +131,6 @@
     font-family: 'Optima_Roman';
 }
 
-.charImg{
-    margin-left: 70px;
-    width: 0px;
-}
 
 
 .charData_2{

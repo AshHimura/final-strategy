@@ -7,6 +7,7 @@ import "./Items.css"
 import battle6 from '../music/Battle_Theme.mp3'
 import battlex from '../music/ffx_battle.flac'
 import battle7 from '../music/battles_begin.mp3'
+import { FF6Carousel } from "../FF6Carousel"
 
 
 export const Items = () => {
@@ -33,7 +34,7 @@ export const Items = () => {
         if (parseInt(gameId) === 1) {
             ff6Fight.current = new Audio(battle6)
             ff6Fight.current.play()
-            ff6Fight.current.volume = 0.09
+            ff6Fight.current.volume = 0.04
             ff6Fight.current.loop = true
         }
     }, [])
@@ -51,7 +52,7 @@ export const Items = () => {
         if (parseInt(gameId) === 2) {
             ffxFight.current = new Audio(battlex)
             ffxFight.current.play()
-            ffxFight.current.volume = 0.09
+            ffxFight.current.volume = 0.04
             ffxFight.current.loop = true
         }
     }, [])
@@ -69,7 +70,7 @@ export const Items = () => {
         if (parseInt(gameId) === 3) {
             ff7rFight.current = new Audio(battle7)
             ff7rFight.current.play()
-            ff7rFight.current.volume = 0.09
+            ff7rFight.current.volume = 0.04
             ff7rFight.current.loop = true
         }
     }, [])
@@ -143,6 +144,8 @@ export const Items = () => {
                 <br />
 
                 <h2 className="selectItem"> Choose an item, kupo!</h2>
+
+                <FF6Carousel/>
 
                 <div className="item">
                     <KeyItems setSelectKeyI={setSelectKeyI} setSelectEquipI={setSelectEquipI} setSelectBattleI={setSelectBattleI} />

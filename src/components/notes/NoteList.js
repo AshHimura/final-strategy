@@ -45,7 +45,7 @@ export const NoteList = () => {
         if (parseInt(gameId) === 1) {
             ff6Mood.current = new Audio(world)
             ff6Mood.current.play()
-            ff6Mood.current.volume = 0.09
+            ff6Mood.current.volume = 0.04
             ff6Mood.current.loop = true
         }
     }, [])        
@@ -62,7 +62,7 @@ export const NoteList = () => {
         if (parseInt(gameId) === 2) {
             ffxMood.current = new Audio(bevelle)
             ffxMood.current.play()
-            ffxMood.current.volume = 0.09
+            ffxMood.current.volume = 0.04
             ffxMood.current.loop = true
         }
     }, [])        
@@ -79,7 +79,7 @@ export const NoteList = () => {
         if (parseInt(gameId) === 3) {
             ff7rMood.current = new Audio(ruin)
             ff7rMood.current.play()
-            ff7rMood.current.volume = 0.09
+            ff7rMood.current.volume = 0.06
             ff7rMood.current.loop = true
         }
     }, [])        
