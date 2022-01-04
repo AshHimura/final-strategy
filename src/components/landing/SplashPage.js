@@ -61,7 +61,7 @@ export const SplashPage = () => {
                         }>Logout!</Link>
                     </li>
 
-                    <h1>Welcome {filUsers ? filUsers.userName : ""} to Final Strategy</h1>
+                    <h1>Welcome, {filUsers ? filUsers.userName : ""}, to Final Strategy</h1>
                     <div>
                         {
                             games.map((gameObj) => {

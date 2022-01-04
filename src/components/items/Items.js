@@ -8,6 +8,8 @@ import battle6 from '../music/Battle_Theme.mp3'
 import battlex from '../music/ffx_battle.flac'
 import battle7 from '../music/battles_begin.mp3'
 import { FF6Carousel } from "../carousel/FF6Carousel"
+import { FF7RCarousel } from "../carousel/FF7RCarousel"
+import { FFXCarousel } from "../carousel/FFXCarousel"
 
 
 export const Items = () => {
@@ -160,7 +162,8 @@ export const Items = () => {
                     {battleItemDataPost()}
                 </div>
                 <aside>
-                <FF6Carousel/>
+                {game.id === 1 ? <FF6Carousel/> : game.id === 2 ? <FFXCarousel/> : game.id === 3 ? <FF7RCarousel/>  : ""}
+                
                 </aside>
                 </div>
             </div>

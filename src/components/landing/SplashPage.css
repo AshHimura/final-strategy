@@ -24,8 +24,9 @@ h1{
 .splashImg {
     border-radius: 39% 9px;
     padding: 70px;
-    width: 280px;
-    margin-left: 150px;
+    width: 330px;
+    margin-left: 120px;
+    margin-top: 40px;
 }
 
 .splashImg:hover {
