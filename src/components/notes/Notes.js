@@ -41,7 +41,7 @@ export const Note = () => {
             if (parseInt(gameId) === 1) {
                 ff6pub.current = new Audio(johnny)
                 ff6pub.current.play()
-                ff6pub.current.volume = 0.09
+                ff6pub.current.volume = 0.04
                 ff6pub.current.loop = true
             }
         }, [])        
@@ -57,7 +57,7 @@ export const Note = () => {
             if (parseInt(gameId) === 2) {
                 ffxpub.current = new Audio(gagazet)
                 ffxpub.current.play()
-                ffxpub.current.volume = 0.09
+                ffxpub.current.volume = 0.04
                 ffxpub.current.loop = true
             }
         }, [])        
@@ -73,7 +73,7 @@ export const Note = () => {
             if (parseInt(gameId) === 3) {
                 ff7rpub.current = new Audio(hollow)
                 ff7rpub.current.play()
-                ff7rpub.current.volume = 0.09
+                ff7rpub.current.volume = 0.05
                 ff7rpub.current.loop = true
             }
         }, [])        

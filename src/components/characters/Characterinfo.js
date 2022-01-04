@@ -52,7 +52,7 @@ export const CharacterInfo = ({ selectCh }) => {
 
                 <aside className="charImg">
                     <div className="profile">
-                        <img src={`http://localhost:8080/${selectCh.image}`} key={selectCh} />
+                        <img style={{maxWidth: "100%", maxHeight: "100%", marginLeft: "180px"}} src={`http://localhost:8080/${selectCh.image}`} key={selectCh} />
                     </div><br/>
                 </aside>
                 </div>

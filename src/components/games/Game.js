@@ -34,7 +34,7 @@ export const Games = () => {
             if (parseInt(gameId) === 2) {
                 ffxSp.current = new Audio(zanarkand)
                 ffxSp.current.play()
-                ffxSp.current.volume = 0.03
+                ffxSp.current.volume = 0.04
                 ffxSp.current.loop = true 
             }
         }, [])  

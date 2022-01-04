@@ -1,11 +1,20 @@
 .container_1 {
     background-image: url(../images/background/ff6/ff6Splash.png);
     height: 110vh;
-    background-size: 1850px;
+    background-size: 1650px;
     background-repeat: no-repeat;
     font-size: 50px;
     margin-top: -79px;
     min-height: 100vh;
+}
+
+.game__name1 {
+font-family: 'ferrum';
+line-height: 6.8;
+color: #ffffff;
+margin-left: 30px;
+height: 4vh;
+margin-top: 30px
 }
 
 @media (min-width: 650px ) {
@@ -29,12 +38,12 @@
     }
 }
 .container_3 {
-    background-image: url(../images/background/ff7r/ff7rSplash.png);
+    background-image: url(../images/background/ff7r/cloudSplash.png);
     height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
     font-size: 50px;
-    margin-top: -97px;
+    margin-top: -57px;
 }
 
 @media (min-width: 650px ) {
@@ -77,14 +86,6 @@ div.gameWelcome_1{
     margin-top: 450px;
     margin-left: 30px;}
 
-.game__name1 {
-font-family: 'ferrum';
-line-height: 3.8;
-color: #ffffff;
-margin-left: 30px;
-height: 5vh;
-margin-top: 30px
-}
 
 
 .gameWelcome_2 {
@@ -98,7 +99,7 @@ margin-top: 30px
 
 .game__name2 {
 font-family: 'ferrum';
-line-height: 3.8;
+line-height: 6.8;
 color: #ffffff;
 margin-left: 30px;
 height: 5vh;
@@ -107,10 +108,10 @@ margin-top: px
 
 .gameWelcome_3 {
     font-family: 'Optima_Roman';
-    color: #000000;
+    color: #c9bfbf;
     font-size: 30px;
-    margin-top: 470px;
-    margin-left: 30px;
+    margin-top: 300px;
+    margin-left: 990px;
     line-height: 1.6;
 }
 

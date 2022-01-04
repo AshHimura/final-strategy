@@ -71,7 +71,7 @@ export const DupeSplash = (props) => {
                         {
                             games.map((gameObj) => {
                                 return <Link to={`/game/${parseInt(gameObj.id)}`} id={gameObj.id}>
-                                    <img key={gameObj.id} src={`http://localhost:8080/${gameObj.img}`} alt={gameObj.alt} />
+                                    <img className="splashImg" key={gameObj.id} src={`http://localhost:8080/${gameObj.img}`} alt={gameObj.alt} />
                                 </Link>
                             })}
                     </div>
