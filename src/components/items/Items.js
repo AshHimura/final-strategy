@@ -7,7 +7,7 @@ import "./Items.css"
 import battle6 from '../music/Battle_Theme.mp3'
 import battlex from '../music/ffx_battle.flac'
 import battle7 from '../music/battles_begin.mp3'
-import { FF6Carousel } from "../FF6Carousel"
+import { FF6Carousel } from "../carousel/FF6Carousel"
 
 
 export const Items = () => {
@@ -145,7 +145,6 @@ export const Items = () => {
 
                 <h2 className="selectItem"> Choose an item, kupo!</h2>
 
-                <FF6Carousel/>
 
                 <div className="item">
                     <KeyItems setSelectKeyI={setSelectKeyI} setSelectEquipI={setSelectEquipI} setSelectBattleI={setSelectBattleI} />
@@ -154,11 +153,15 @@ export const Items = () => {
 
                     <Equipment setSelectKeyI={setSelectKeyI} setSelectEquipI={setSelectEquipI} setSelectBattleI={setSelectBattleI} />
                 </div>
-
+                <div>
                 <div className={game.id === 1 ? "itemData_1" : game.id === 2 ? "itemData_2" : game.id === 3 ? "itemData_3" : ""}>
                     {keyItemDataPost()}
                     {equipItemDataPost()}
                     {battleItemDataPost()}
+                </div>
+                <aside>
+                <FF6Carousel/>
+                </aside>
                 </div>
             </div>
         </>
