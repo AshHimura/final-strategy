@@ -103,7 +103,7 @@ export const Items = () => {
     const equipmentList = () => {
         return selectEquipI.equipment.effects.map((effect) => (
             <>
-                <ul>{effect}</ul>
+                <li>{effect}</li>
             </>
         ))
     }
@@ -117,7 +117,7 @@ export const Items = () => {
                         <div>Name: {selectEquipI.equipment.name}</div><br />
                         <div>Type: {selectEquipI.equipment.type}</div><br />
                         <div>Description: {selectEquipI.equipment.description}</div>
-                        <ul>Effect: {equipmentList()}</ul>
+                        <ul>Effects: {equipmentList()}</ul>
                     </> : ""}
             </>
         )
@@ -145,10 +145,10 @@ export const Items = () => {
                 <br />
                 <br />
 
-                <h2 className="selectItem"> Choose an item, kupo!</h2>
+                <h2 className={game.id === 1 ? "selectItem1" : game.id === 2 ? "selectItem2" : game.id === 3 ? "selectItem3" : ""}> Choose an item, kupo!</h2>
 
 
-                <div className="item">
+                <div className={game.id === 1 ? "item1" : game.id === 2 ? "item2" : game.id === 3 ? "item3" : ""}>
                     <KeyItems setSelectKeyI={setSelectKeyI} setSelectEquipI={setSelectEquipI} setSelectBattleI={setSelectBattleI} />
 
                     <BattleItems setSelectKeyI={setSelectKeyI} setSelectEquipI={setSelectEquipI} setSelectBattleI={setSelectBattleI} />
